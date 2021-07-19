@@ -36,6 +36,8 @@
     --input-color: hsl(var(--hue-color), 70%, 96%);
     --body-color: hsl(var(--hue-color), 0%, 0%);
     --container-color: #4e2f2f;
+    --scroll-bar-color: hsl(var(--hue-color), 0%, 0%);
+    --scroll-thumb-color: hsl(var(--hue-color), 0%, 20%);
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -836,13 +838,41 @@ img {
 }
 
 /*========== SCROLL UP ==========*/
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: 5rem;
+    background-color: var(--first-color);
+    opacity: .8;
+    padding: 0 .3rem;
+    border-radius: .4rem;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+}
 
+.scrollup:hover {
+    transform: scale(1.2);
+}
+
+.scrollup__icon {
+    font-size: 1.5rem;
+    color: #000;
+}
 
 /* Show scroll */
 
 
 /*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+    width: 0.6em;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
 
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
